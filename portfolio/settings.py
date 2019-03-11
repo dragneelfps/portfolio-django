@@ -145,10 +145,16 @@ if AWS_STORAGE_BUCKET_NAME:
     print('using aws s3 bucket')
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' #for media files
     MEDIA_ROOT = os.environ.get('MEDIA_URL', '')
+    MEDIA_URL = '/media/'
 else:
     print('using local media files')
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     MEDIA_URL = '/media/'
+
+print('STATIC_ROOT', STATIC_ROOT)
+print('STATIC_URL', STATIC_URL)
+print('MEDIA_ROOT', MEDIA_ROOT)
+print('MEDIA_URL', MEDIA_URL)
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
