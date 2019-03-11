@@ -145,7 +145,7 @@ if AWS_STORAGE_BUCKET_NAME:
     print('using aws s3 bucket')
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' #for media files
     MEDIA_ROOT = os.environ.get('MEDIA_URL', '')
-    MEDIA_URL = '/media/'
+    MEDIA_URL = ''
 else:
     print('using local media files')
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
